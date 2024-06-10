@@ -1,6 +1,25 @@
+var mongoose = require("mongoose");
 
-var mongoose= require("mongoose");
+// Define the product schema
+var productSchema = new mongoose.Schema({
+    name: {
+        type: String,
+        required: true
+    },
+    Quantity: {
+        type: Number,
+        required: true
+    },
+    price: {
+        type: Number,
+        required: true
+    },
+    instock: {
+        type: String,
+        enum: ['Yes', 'No'], // Only allows 'Yes' or 'No'
+        required: true
+    }
+});
 
-//write your schema Here with name of schema as productSchema
-
-module.exports =mongoose.model("products",productSchema);
+// Export the model
+module.exports = mongoose.model("Product", productSchema);
