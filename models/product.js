@@ -14,7 +14,7 @@ var productSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
-    Instock: {
+    instock: {
         type: String,
         enum: ['Yes', 'No'], // Only allows 'Yes' or 'No'
         required: true
